@@ -1,4 +1,4 @@
-import { Database } from './schemas/database';
+import { Database } from './schemas/connection';
 
 const MongoDB = new Database({
   type: "mongodb",
@@ -12,7 +12,7 @@ const MongoDB = new Database({
   await MongoDB.connect();
 })()
 
-// When node attempt to gracefully shutdown the process.
+// When node receives a shutdown request attempt to gracefully shutdown the process.
 process.on('SIGINT', () => {
   (async () => {
     let err = await MongoDB.close();
