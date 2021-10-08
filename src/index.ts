@@ -15,7 +15,7 @@ const MongoDB = new Database({
 // When node receives a shutdown request attempt to gracefully shutdown the process.
 process.on('SIGINT', () => {
   (async () => {
-    let err = await MongoDB.close();
+    const err = await MongoDB.close();
     process.exit((err) ? 1 : 0);
   })();
 });
