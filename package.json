@@ -24,6 +24,7 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "jest --detectOpenHandles",
+    "start": "node ./node_modules/ts-node/dist/bin.js src/index.ts"
   }
 }

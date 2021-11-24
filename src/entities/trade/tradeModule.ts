@@ -1,4 +1,4 @@
-import { Entity, ObjectID, ObjectIdColumn, Column, BaseEntity} from "typeorm";
+import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
 import { IsString } from 'class-validator';
 
 import { BaseEntityWithValidation } from '../_common';
@@ -36,12 +36,33 @@ export class TradeModule extends BaseEntityWithValidation {
   @Column(type => Rate)
   rates: Rate[];
 
-  /** The orders which have been placed in this module. */
+  /** The orders which have been placed in this module. */c
   @Column(type => Order)
   orders: Order[];
 
   async bindChannel(serverId: string, channelId: string, purpose: 'Commands' | '') {
-
+    const a = 'asdad'
   }
 
 }
+
+// - /create tradeModule name
+//  - /bind name server channel tradecommands
+//  - /bind name server channel tradeoutputs
+//  - /setrates ratesJson
+//  - /createeOrder target offer type
+//  - /acceptOrder orderId
+//  - /cancelOrder orderid
+//  - /completeOrder orderid
+// [4:00 PM]
+// I am hoping server and channel ids can be inferred from the context
+// [4:00 PM]
+// the first four should be restricted to server admins (edited)
+// [4:00 PM]
+// the last three should be triggered by reactions
+// [4:01 PM]
+// down the road implement a /queryHistory queryParams command
+// [4:02 PM]
+// could also have a /create tradeModule serverId commandChannelId outputChannelID to give some flexibility
+// [4:04 PM]
+// also will need a reaction for /cancelOrderAcceptance orderId

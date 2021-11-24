@@ -11,6 +11,7 @@ import { TradeModule } from './entities/trade';
     name: 'default',
     entities: [TradeModule],
   });
+  const tradeModule = await TradeModule.findOne({ serverID: 'notAServer' });
 })()
 
 // When node receives a shutdown request attempt to gracefully shutdown the process.
