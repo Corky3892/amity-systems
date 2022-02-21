@@ -4,7 +4,7 @@
   "description": "A toolkit for managing HS Communities",
   "main": "index.ts",
   "repository": "https://github.com/Corky3892/amity-systems.git",
-  "author": "Corey Connor <corey.connor@oceanpartners.com>",
+  "author": "Corey Connor <coreydconnor@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "class-validator": "^0.13.1",
